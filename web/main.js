@@ -10,12 +10,8 @@ async function send() {
     var name_csv_order = document.querySelector("#name_csv_order").value;
     var mail_content1_order = document.querySelector("#mail_content1_order").value;
     var mail_content2_order = document.querySelector("#mail_content2_order").value;
-
     var attached_dir_path = document.querySelector("#attached_dir_path").value;
-
     var attached_csv_order = document.querySelector("#attached_csv_order").value;
-
-
 
     document.querySelector('#result').textContent = "寄信中..."
     result = await eel.main(letter_title,html_path,csv_path,sender_mail,sender_password,mail_csv_order,name_csv_order,mail_content1_order,mail_content2_order,attached_dir_path,attached_csv_order)();
