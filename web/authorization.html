@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>大量寄mail系統</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--響應式代碼-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!--html 內一定要在head內引入/eel.js 這個是必不可少，因為當python在eel.init()時就會將python內要被呼叫的function 寫進去eel.js內讓你的JS檔案去做使用-->
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+    <!--左上圖示-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <script>
+        // 當網頁載入時，執行這個 callback 函數，如果本地端有金鑰，就檢查這台機器上的CPU序號是否跟雲端序號一致,所以有唯一性
+        window.addEventListener('load', check_local_ket())
+    </script>
+
+</head>
+
+<body>
+
+<!--主容器-->
+<div class="container" id="main_container">
+
+    <div class="d-flex justify-content-center h3">
+            <p id="title">大量寄mail系統</p>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center">
+        <input type="text" id="authorization" class="" placeholder="請輸入授權碼"/>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center">
+        <input type="button" value="確定" onclick="send_authorization()" id ="send_authorization" class="mt-4" />
+    </div>
+
+    <!-- 回傳值顯示位置-->
+    <div class="d-flex justify-content-center align-items-center">
+        <p id="authorization_result" ></p>
+    </div>
+
+
+</body>
+
+</html>

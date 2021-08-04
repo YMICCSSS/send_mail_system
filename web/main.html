@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>大量寄mail系統</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--響應式代碼-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!--html 內一定要在head內引入/eel.js 這個是必不可少，因為當python在eel.init()時就會將python內要被呼叫的function 寫進去eel.js內讓你的JS檔案去做使用-->
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+    <!--左上圖示-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+</head>
+
+<body>
+
+<!--主容器-->
+<div class="container" id="main_container">
+
+    <div class="d-flex justify-content-center h3">
+            <p id="title">大量寄mail系統</p>
+    </div>
+
+   <!--參考範例HTML路徑-->
+    <div class="d-flex justify-content-center">
+
+        <div class="" ><a href="tutorial.html" target="_blank" class="col-2" >使用前必讀</a></div>
+        <div class=""><a href="https://www.notion.so/Gmail-0281e5af14e44da19765e8e3e5136e86"  target="_blank" class="col-2">Gmail密碼產生方式</a></div>
+
+        <div class=""><a href="sample.csv" target="_blank" class="col-2">CSV範本</a></div>
+
+    </div>
+
+
+    <div class="p-2" id="white-box" >
+
+        <div class="d-flex justify-content-center">
+            <input type="text" id="letter_title" class="mt-2" value="" placeholder="信件標題"/>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <input type="text" id="html_path" class="mt-2" value="" placeholder="HTML模板檔名路徑"/>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <input type="text" id="csv_path" class="mt-2" value="" placeholder="客製CSV檔名路徑"/>
+        </div>
+
+        <div class="row justify-content-center">
+            <input type="text" id="sender_mail" class="mt-2 col-6" value="" placeholder="寄件人mail"/>
+            <input type="text" id="sender_password" class="mt-2 col-6" value="" placeholder="寄件人mail密碼">
+        </div>
+
+        <div class="row justify-content-center">
+            <input type="text" id="name_csv_order" class="mt-2 col-6" value="" placeholder="收件人name在CSV第幾欄位">
+            <input type="text" id="mail_csv_order" class="mt-2 col-6" value="" placeholder="收件人mail在CSV第幾欄位">
+        </div>
+
+        <div class="row justify-content-center">
+            <input type="text" id="mail_content1_order" class="mt-2 col-12" value="" placeholder="content1 客製化內容在CSV第幾欄位,如沒有請輸入「NO」">
+        </div>
+
+        <div class="row justify-content-center">
+            <input type="text" id="mail_content2_order" class="mt-2 col-12" value="" placeholder="content2 客製化內容在CSV第幾欄位,如沒有請輸入「NO」">
+        </div>
+
+        <div class="row justify-content-center">
+            <input type="text" id="attached_dir_path" class="mt-2 col-12" value="" placeholder="附檔資料夾完整路徑,如沒有請輸入「NO」">
+        </div>
+
+        <div class="row justify-content-center">
+            <input type="text" id="attached_csv_order" class="mt-2 col-12" value="" placeholder="附檔內容在CSV第幾欄位,如沒有請輸入「NO」">
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <input type="button" value="寄信" onclick ="send()" id="send_button" class="mt-2"/>
+        </div>
+
+        <!-- 回傳值顯示位置-->
+        <div class="d-flex justify-content-center align-items-center">
+            <p id="result" ></p>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
